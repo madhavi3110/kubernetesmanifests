@@ -3,15 +3,6 @@ kind: Pod
 metadata:
   name: zipkin
 spec:
-  selector:
-    matchLabels:
-      app: zipkin
-      env: dev
-  template:
-    metadata:
-      labels:
-        app: zipkin
-        env: dev
   containers:
     - image: openzipkin/zipkin
       name: zipkin

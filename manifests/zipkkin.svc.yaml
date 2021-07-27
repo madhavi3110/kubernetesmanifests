@@ -4,9 +4,6 @@ metadata:
   name: zipkin-dev
 spec:
   type: NodePort
-  selector:
-    app: zipkin
-    env: dev
   ports:
     - targetPort: 9411
       port: 9411
