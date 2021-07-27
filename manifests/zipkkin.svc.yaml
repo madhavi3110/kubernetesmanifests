@@ -7,4 +7,5 @@ spec:
   ports:
     - targetPort: 9411
       port: 9411
-      nodePort: 9411 
+      nodePort: 32767
+       
