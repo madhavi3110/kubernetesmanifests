@@ -3,9 +3,6 @@ kind: Service
 metadata:
   name: zipkin-dev
 spec:
-  selector:
-    app: zipkin
-  type: NodePort
   ports:
     - protocal: TCP
       port: 80
