@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: zipkin-dev
 spec:
+  selector:
+    app: zipkin
   type: NodePort
   ports:
-    - targetPort: 9411
-      port: 9411
-      nodePort: 32767
-       
+    - protocal: TCP
+      port: 80
+      targetPort: 9411
