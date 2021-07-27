@@ -1,12 +1,24 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: ReplicaSet
 metadata:
-  name: zipkin
+  name: zipkin-qa
 spec:
-  containers:
-    - image: openzipkin/zipkin
-      name: zipkin
-      ports:
-        - containerPort: 9411
-          name: zipkinhttpport
-          protocol: TCP
+  minReadySeconds: 10
+  replicas: 1
+  selector:
+    matchLabels:
+      app: zipkin
+      env: qa
+  template:
+    metadata:
+      labels:
+        app: zipkin
+        env: qa
+    spec:
+      containers:
+        - image: openzipkin/zipkin
+          name: zipkin-qa
+          ports:
+            - containerPort: 9411
+              protocol: TCP 
+    
